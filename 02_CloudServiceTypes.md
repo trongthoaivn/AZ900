@@ -10,5 +10,18 @@
 
 Example
 ```mermaid
-
+---
+title: SQL Stretch Database
+---
+    flowchart LR
+        ua(User Application)
+        ldb[("`On-Premies Local Database
+								Hot data
+								Cold data`")]
+        azdb[("`Azure SQL Strectch Database
+        Cold data`")]
+								ua --"T-SQL Queries"--> ldb
+								ldb <--"Smart query processing"--> azdb
+								ldb <--"Eligible data"--> azdb
 ```
+# Compare and constrast
